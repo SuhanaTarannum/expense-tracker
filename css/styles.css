@@ -63,6 +63,7 @@ button:hover {
 
 .panel {
   background: rgba(255,255,255,0.08);
+  color: white;
   padding: 25px;
   border-radius: 18px;
   backdrop-filter: blur(15px);
@@ -105,4 +106,32 @@ canvas {
   background: rgba(255,255,255,0.2);
   border-color: #00c6ff;
   outline: none;
+}
+
+/* Top bar layout */
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* centers all items horizontally */
+  gap: 20px;               /* space between h2 and button */
+  margin-bottom: 20px;
+}
+
+/* Optional: adjust h2 and button */
+.top-bar h2 {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.logout-btn {
+  padding: 8px 14px;
+  background: #ff6666;    /* red logout button */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.logout-btn:hover {
+  background: #ff4d4d;
 }

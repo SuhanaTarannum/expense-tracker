@@ -65,6 +65,7 @@ function deleteExpense(month, index) {
   updateUI();
 }
 
+// Update Pie Chart
 function updatePie(data) {
   const ctx = document.getElementById("pieChart");
 
@@ -75,12 +76,25 @@ function updatePie(data) {
     data: {
       labels: Object.keys(data),
       datasets: [{
-        data: Object.values(data)
+        data: Object.values(data),
+        backgroundColor: [
+          "#4da6ff", "#ff9999", "#ffcc66", "#66cc99", "#c266ff"
+        ]
       }]
+    },
+    options: {
+      plugins: {
+        legend: {
+          labels: {
+            color: "#fff" // White legend text
+          }
+        }
+      }
     }
   });
 }
 
+// Update Bar Chart
 function updateBar() {
   const ctx = document.getElementById("barChart");
 
@@ -97,8 +111,26 @@ function updateBar() {
       labels: months,
       datasets: [{
         label: "Monthly Spending",
-        data: totals
+        data: totals,
+        backgroundColor: "#4da6ff"
       }]
+    },
+    options: {
+      plugins: {
+        legend: {
+          labels: { color: "#fff" } // white text
+        }
+      },
+      scales: {
+        x: {
+          ticks: { color: "#fff" }, // x-axis white
+          grid: { color: "rgba(255,255,255,0.1)" }
+        },
+        y: {
+          ticks: { color: "#fff" }, // y-axis white
+          grid: { color: "rgba(255,255,255,0.1)" }
+        }
+      }
     }
   });
 }
